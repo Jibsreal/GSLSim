@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Russian Federation — DISEC GSL Speech</title>
+<style>
+  :root {
+    --ink: #1f2933;
+    --muted: #5c6773;
+    --gold: #b08d57;
+    --gold-dark: #8a6a3f;
+    --paper: #fffdf8;
+    --cream: #f4efe4;
+    --line: rgba(176, 141, 87, 0.35);
+    --shadow: 0 18px 50px rgba(31, 41, 51, 0.12);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 42px 18px;
+    color: var(--ink);
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+    background:
+      radial-gradient(circle at 12% 18%, rgba(176, 141, 87, 0.14), transparent 28%),
+      radial-gradient(circle at 88% 82%, rgba(31, 41, 51, 0.08), transparent 30%),
+      linear-gradient(135deg, #f8f4ea 0%, #efe7d8 100%);
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .speech-card {
+    position: relative;
+    overflow: hidden;
+    background: var(--paper);
+    border: 1px solid rgba(176, 141, 87, 0.45);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    padding: 48px 54px 44px;
+  }
+
+  .speech-card::before {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(176, 141, 87, 0.22);
+    border-radius: 12px;
+    pointer-events: none;
+  }
+
+  .top-rule {
+    width: 72px;
+    height: 3px;
+    margin: 0 auto 26px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .eyebrow {
+    text-align: center;
+    margin: 0 0 10px;
+    color: var(--gold-dark);
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    margin: 0;
+    text-align: center;
+    font-size: clamp(1.75rem, 4vw, 2.55rem);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  .subtitle {
+    margin: 12px auto 0;
+    max-width: 600px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.98rem;
+    line-height: 1.5;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 30px 0 28px;
+    color: var(--gold);
+  }
+
+  .divider::before,
+  .divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  .divider span {
+    width: 7px;
+    height: 7px;
+    border: 1px solid var(--gold);
+    transform: rotate(45deg);
+  }
+
+  .salutation {
+    margin: 0 0 18px;
+    color: var(--gold-dark);
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+  }
+
+  .speech {
+    margin: 0;
+    font-size: clamp(1.04rem, 2.2vw, 1.14rem);
+    line-height: 1.82;
+    text-align: justify;
+    hyphens: auto;
+  }
+
+  .speech::first-letter {
+    float: left;
+    margin: 8px 8px 0 0;
+    color: var(--gold-dark);
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 0.82;
+  }
+
+  .signoff {
+    margin: 28px 0 0;
+    text-align: right;
+    color: var(--gold-dark);
+    font-style: italic;
+    font-size: 1.02rem;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 26px;
+  }
+
+  .print-btn {
+    appearance: none;
+    border: 1px solid var(--gold-dark);
+    border-radius: 999px;
+    padding: 12px 24px;
+    color: #fff;
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(138, 106, 63, 0.22);
+    transition: transform 160ms ease, box-shadow 160ms ease;
+  }
+
+  .print-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 26px rgba(138, 106, 63, 0.28);
+  }
+
+  .print-btn:active {
+    transform: translateY(0);
+  }
+
+  @media (max-width: 640px) {
+    body {
+      padding: 22px 12px;
+    }
+
+    .speech-card {
+      padding: 34px 24px 30px;
+      border-radius: 14px;
+    }
+
+    .speech-card::before {
+      inset: 9px;
+    }
+
+    .speech {
+      text-align: left;
+      line-height: 1.75;
+    }
+  }
+
+  @media print {
+    body {
+      padding: 0;
+      background: #fff;
+    }
+
+    .speech-card {
+      max-width: none;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 0.7in;
+    }
+
+    .speech-card::before,
+    .actions,
+    .top-rule,
+    .divider {
+      display: none;
+    }
+
+    h1 {
+      font-size: 22pt;
+    }
+
+    .speech {
+      font-size: 12pt;
+      line-height: 1.65;
+      text-align: justify;
+    }
+
+    .speech::first-letter {
+      font-size: 3rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <main class="page">
+    <article class="speech-card">
+      <div class="top-rule"></div>
+
+      <p class="eyebrow">Yale Model United Nations Korea XIV · DISEC</p>
+      <h1>Russian Federation</h1>
+      <p class="subtitle">General Speakers’ List Speech — Disarmament and Security in the South China Sea</p>
+
+      <div class="divider"><span></span></div>
+
+      <p class="salutation">Honorable Chair, distinguished delegates,</p>
+
+      <p class="speech">
+        The Russian Federation views the South China Sea as a vital artery of international trade and a region where stability serves the interests of all nations. As a non-claimant State, Russia does not seek to adjudicate sovereignty disputes, but firmly believes that lasting peace can only be achieved through peaceful negotiations among the countries directly concerned, full implementation of the 2002 Declaration on the Conduct of Parties, and the early conclusion of a mutually acceptable Code of Conduct. We support ASEAN’s central role in regional security architecture and oppose external interference that risks transforming maritime disagreements into broader geopolitical confrontation. Russia calls upon this committee to prioritize confidence-building measures, maritime communication mechanisms, and practical cooperation on environmental protection and fisheries management. The South China Sea must remain a region of peaceful navigation and shared development—not a theatre of military confrontation.
+      </p>
+
+      <p class="signoff">Thank you.</p>
+
+      <div class="actions">
+        <button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
